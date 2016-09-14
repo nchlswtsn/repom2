@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.kroger.commons</groupId>
+	<artifactId>kroger-boot-starter-security-siteminder</artifactId>
+	<packaging>jar</packaging>
+	<version>4.0.0</version>
+	<name>Kroger Commons Boot Security SiteMinder</name>
+	<description>Kroger Commons Boot Security SiteMinder</description>
+	<!-- ================================================ -->
+	<parent>
+		<groupId>com.kroger.commons</groupId>
+		<artifactId>kroger-pom</artifactId>
+		<version>4.0.0</version>
+	</parent>
+	<!-- ================================================ -->
+	<scm>
+		<connection>scm:git:http://stash.kroger.com/scm/eaf/kroger-boot-starter-security-siteminder.git</connection>
+	</scm>
+	<!-- ================================================ -->
+	<dependencies>
+		<!-- Kroger Autoconfigure Dependency -->
+		<dependency>
+			<groupId>com.kroger.commons</groupId>
+			<artifactId>kroger-boot-autoconfigure</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kroger.commons</groupId>
+			<artifactId>kroger-security-siteminder</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<!-- Spring Security Dependency-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+	</dependencies>
+</project>

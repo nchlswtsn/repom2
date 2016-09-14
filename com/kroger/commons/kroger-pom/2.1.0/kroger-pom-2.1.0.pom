@@ -1,0 +1,925 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.kroger.commons</groupId>
+	<artifactId>kroger-pom</artifactId>
+	<packaging>pom</packaging>
+	<version>2.1.0</version>
+	<name>Kroger Commons Pom</name>
+	<description>Kroger Commons POM Project</description>
+	<!-- ================================================ -->
+	<url>http://confluence.kroger.com/confluence/display/EAF/Home</url>
+	<!-- ================================================ -->
+	<issueManagement>
+		<system>Jira</system>
+		<url>http://jira.kroger.com/jira/browse/EAF</url>
+	</issueManagement>
+	<!-- ================================================ -->
+	<ciManagement>
+		<system>Team City</system>
+		<url>http://teamcity.kroger.com/teamcity/project.html?projectId=project10</url>
+	</ciManagement>
+	<!-- ================================================ -->
+	<scm>
+		<connection>scm:svn:http://svn.kroger.com/repos/eaf/base/kroger-pom/tags/kroger-pom-2.1.0</connection>
+		<developerConnection>scm:svn:http://svn.kroger.com/repos/eaf/base/kroger-pom/tags/kroger-pom-2.1.0</developerConnection>
+	</scm>
+	<!-- ================================================ -->
+	<properties>
+		<build.properties.file>build.properties</build.properties.file>
+
+		<!-- Apache Commons Versions (commons.beanutil.version is deprecated. Misspelling.)-->
+		<commons.lang.version>2.5</commons.lang.version>
+		<commons.beanutil.version>1.8.3</commons.beanutil.version>
+		<commons.beanutils.version>1.8.3</commons.beanutils.version>
+		<commons.codec.version>1.4</commons.codec.version>
+		<commons.collections.version>3.2.1</commons.collections.version>
+		<commons.discovery.version>0.4</commons.discovery.version>
+		<commons.email.version>1.2</commons.email.version>
+		<commons.io.version>2.0</commons.io.version>
+		<commons.logging.version>1.1.1</commons.logging.version>
+		<commons.dbcp.version>1.4</commons.dbcp.version>
+
+		<!-- Odds and Ends Versions -->
+		<log4j.version>1.2.16</log4j.version>
+		<slf4j.version>1.6.1</slf4j.version>
+		<poi.version>3.7</poi.version>
+		<itext.version>2.1.7</itext.version>
+		<ognl.version>2.6.9</ognl.version>
+		<json.version>2.3</json.version>
+		<hibernate.version>3.6.0.Final</hibernate.version>
+		<ehcache.version>1.5.0</ehcache.version>
+
+		<!-- SpringFramework Versions -->
+		<spring.version>3.0.5.RELEASE</spring.version>
+		<security.version>3.0.5.RELEASE</security.version>
+		<ldap.version>1.3.1.RELEASE</ldap.version>
+		<aspectj.version>1.6.10</aspectj.version>
+
+		<!-- UI Versions (Stripes contains a class-path scanning fix, see kroger-framework-forks) -->
+		<stripes.version>1.5.3.kr</stripes.version>
+		<servlet.api.latest.version>2.5</servlet.api.latest.version>
+		<jsp.api.latest.version>2.1</jsp.api.latest.version>
+		<jstl.version>1.2</jstl.version>
+		<taglibs.version>1.1.2</taglibs.version>
+
+		<!-- WebService Versions -->
+		<cxf.version>2.3.0</cxf.version>
+		<axis.version>1.4</axis.version>
+		<wsdl4j.version>1.6.2</wsdl4j.version>
+		<jaxb.version>2.1.13</jaxb.version>
+
+		<!-- Testing Versions -->
+		<junit.version>4.8.1</junit.version>
+		<mockito.version>1.8.5</mockito.version>
+		<jboss.j2ee.api.version>4.0.2</jboss.j2ee.api.version>
+		<xerces.api.version>2.6.2</xerces.api.version>
+		<xerces.impl.version>2.9.1</xerces.impl.version>
+		<dbunit.version>2.2</dbunit.version>
+		<derby.version>10.6.1.0</derby.version>
+		<easymock.version>3.0</easymock.version>
+		<antcontrib.version>1.0b2</antcontrib.version>
+
+		<!-- Maven Plugin Versions -->
+		<maven.antrun.plugin.version>1.6</maven.antrun.plugin.version>
+		<maven.changelog.plugin.version>2.2</maven.changelog.plugin.version>
+		<maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
+		<!-- Note Eclipse 2.8 does not work with AspectJ aspect path -->
+		<maven.eclipse.plugin.version>2.7</maven.eclipse.plugin.version>
+		<maven.idea.plugin.version>2.2</maven.idea.plugin.version>
+		<maven.javadoc.plugin.version>2.7</maven.javadoc.plugin.version>
+		<maven.pmd.plugin.version>2.5</maven.pmd.plugin.version>
+		<maven.project.info.plugin.version>2.1.2</maven.project.info.plugin.version>
+		<maven.statscm.plugin.version>1.2.0</maven.statscm.plugin.version>
+		<maven.surefire.plugin.version>2.6</maven.surefire.plugin.version>
+		<maven.release.plugin.version>2.1</maven.release.plugin.version>
+		<maven.wagon.webdav.plugin.version>1.0-beta-2</maven.wagon.webdav.plugin.version>
+
+		<!-- Codehaus Plugin Versions -->
+		<!-- Aspectj has to use version 1.2 since version 1.3 does not appear to work with ITDs -->
+		<codehaus.aspectj.plugin.version>1.2</codehaus.aspectj.plugin.version>
+		<codehaus.cobertura.plugin.version>2.4</codehaus.cobertura.plugin.version>
+		<codehaus.dashboard.plugin.version>1.0.0-beta-1</codehaus.dashboard.plugin.version>
+		<codehaus.findbugs.plugin.version>2.1</codehaus.findbugs.plugin.version>
+		<codehaus.javancss.plugin.version>2.0</codehaus.javancss.plugin.version>
+		<codehaus.taglist.plugin.version>2.4</codehaus.taglist.plugin.version>
+		<codehaus.groovy.compiler.version>2.5.1</codehaus.groovy.compiler.version>
+		<codehaus.groovy.batch.version>1.7.10-01</codehaus.groovy.batch.version>
+
+		<!-- JSLint Support -->
+		<codehaus.jslint.version>0.1.0</codehaus.jslint.version>
+		<!-- Assume JSLint for ExtJS Apps -->
+		<javascript.directory>${basedir}/src/main/webapp/app</javascript.directory>
+
+		<!-- Other Plugin Versions -->
+		<tomcat.plugin.version>1.0</tomcat.plugin.version>
+		<jetty.plugin.version>7.1.2.v20100523</jetty.plugin.version>
+
+		<changelog.date.range.number>30</changelog.date.range.number>
+
+	</properties>
+	<!-- ================================================ -->
+	<developers>
+		<developer>
+			<name>Java Developer</name>
+			<email>java.developer@kroger.com</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>Kroger Software Engineering</organization>
+		</developer>
+	</developers>
+	<!-- ================================================ -->
+	<dependencies>
+		<!-- Testing Dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<!-- ================================================ -->
+	<profiles>
+		<!-- This profile sets the Java JDK target -->
+		<!-- To activate, run 'mvn -P java5' -->
+		<profile>
+			<id>java5</id>
+			<activation>
+				<file>
+					<missing>java6.profile</missing>
+				</file>
+			</activation>
+			<properties>
+				<java.source>1.5</java.source>
+				<java.target>1.5</java.target>
+			</properties>
+		</profile>
+		<profile>
+			<id>java6</id>
+			<activation>
+				<file>
+					<exists>java6.profile</exists>
+				</file>
+			</activation>
+			<properties>
+				<java.source>1.6</java.source>
+				<java.target>1.6</java.target>
+			</properties>
+		</profile>
+		<profile>
+			<id>java6transition</id>
+			<activation>
+				<file>
+					<exists>java6t.profile</exists>
+				</file>
+			</activation>
+			<properties>
+				<java.source />
+				<java.target>1.5</java.target>
+			</properties>
+		</profile>
+		<!-- This profile sets the Java JDK target -->
+		<!-- To activate, run 'mvn -P jee5/6' -->
+		<profile>
+			<id>jee5</id>
+			<activation>
+				<file>
+					<missing>jee6.profile</missing>
+				</file>
+			</activation>
+			<properties>
+				<servlet.api.version>2.4</servlet.api.version>
+				<jpa.api.version>1</jpa.api.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>jee6</id>
+			<activation>
+				<file>
+					<exists>jee6.profile</exists>
+				</file>
+			</activation>
+			<properties>
+				<servlet.api.version>2.5</servlet.api.version>
+				<jpa.api.version>2</jpa.api.version>
+			</properties>
+		</profile>
+		<!-- This profile sets the websphere switches -->
+		<!-- To activate, run 'mvn -P websphere' -->
+		<profile>
+			<id>websphere</id>
+			<activation>
+				<file>
+					<exists>websphere.profile</exists>
+				</file>
+			</activation>
+			<properties>
+				<commons.logging.scope.selector>provided</commons.logging.scope.selector>
+				<commons.logging.classifier.selector>was-compatible</commons.logging.classifier.selector>
+				<jaxb.scope.selector>compile</jaxb.scope.selector>
+			</properties>
+		</profile>
+		<profile>
+			<id>nonwebsphere</id>
+			<activation>
+				<file>
+					<missing>websphere.profile</missing>
+				</file>
+			</activation>
+			<properties>
+				<commons.logging.scope.selector>compile</commons.logging.scope.selector>
+				<commons.logging.classifier.selector />
+				<jaxb.scope.selector>compile</jaxb.scope.selector>
+			</properties>
+		</profile>
+		<!-- This profile sets the websphere switches -->
+		<!-- To activate, run 'mvn -P websphere' -->
+		<profile>
+			<id>websphere7</id>
+			<activation>
+				<file>
+					<exists>websphere7.profile</exists>
+				</file>
+			</activation>
+			<properties>
+				<commons.logging.scope.selector>provided</commons.logging.scope.selector>
+				<commons.logging.classifier.selector>was-compatible</commons.logging.classifier.selector>
+				<jaxb.scope.selector>provided</jaxb.scope.selector>
+			</properties>
+		</profile>
+		<profile>
+			<id>nonwebsphere7</id>
+			<activation>
+				<file>
+					<missing>websphere7.profile</missing>
+				</file>
+			</activation>
+			<properties>
+				<commons.logging.scope.selector>compile</commons.logging.scope.selector>
+				<commons.logging.classifier.selector />
+				<jaxb.scope.selector>compile</jaxb.scope.selector>
+			</properties>
+		</profile>
+		<!-- These profiles enables sitezip step to aid TeamCity -->
+		<profile>
+			<id>teamcity-build</id>
+			<activation>
+				<property>
+					<name>teamcity.build.tempDir</name>
+				</property>
+			</activation>
+			<properties>
+				<java.io.tmpdir>${teamcity.build.tempDir}</java.io.tmpdir>
+			</properties>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>${maven.surefire.plugin.version}</version>
+						<configuration>
+							<systemProperties>
+								<property>
+									<name>java.io.tmpdir</name>
+									<value>${teamcity.build.tempDir}</value>
+								</property>
+							</systemProperties>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile> 
+		<profile>
+			<id>sitezip</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>sitezip</id>
+								<phase>site</phase>
+								<configuration>
+									<tasks>
+										<mkdir dir="target/site" />
+										<zip basedir="target/site" destfile="target/site.zip" />
+										<mkdir dir="target/site/cobertura" />
+										<zip basedir="target/site/cobertura" destfile="target/cobertura.zip" />
+										<mkdir dir="target/site/apidocs" />
+										<zip basedir="target/site/apidocs" destfile="target/apidocs.zip" />
+									</tasks>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<!-- This profiles enables AspectJ Tooling -->
+		<profile>
+			<id>kroger-ajt</id>
+			<activation>
+				<file>
+					<exists>kr-ajt.profile</exists>
+				</file>
+			</activation>
+			<properties>
+				<kroger.aspects.groupid>com.kroger.commons</kroger.aspects.groupid>
+				<kroger.aspects.artifactid>kroger-aspects</kroger.aspects.artifactid>
+			</properties>
+		</profile>
+		<profile>
+			<id>non-kroger-ajt</id>
+			<activation>
+				<file>
+					<missing>kr-ajt.profile</missing>
+				</file>
+			</activation>
+			<properties>
+				<!-- Trick. Repeat an existing entry to prevent null group id -->
+				<kroger.aspects.groupid>org.springframework</kroger.aspects.groupid>
+				<kroger.aspects.artifactid>spring-aspects</kroger.aspects.artifactid>
+			</properties>
+		</profile>
+		<profile>
+			<id>ajt</id>
+			<activation>
+				<file>
+					<exists>ajt.profile</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>aspectj-maven-plugin</artifactId>
+						<version>${codehaus.aspectj.plugin.version}</version>
+						<dependencies>
+							<!-- You must use Maven 2.0.9 or above or these are ignored (see MNG-2972) -->
+							<dependency>
+								<groupId>org.aspectj</groupId>
+								<artifactId>aspectjrt</artifactId>
+								<version>${aspectj.version}</version>
+							</dependency>
+							<dependency>
+								<groupId>org.aspectj</groupId>
+								<artifactId>aspectjtools</artifactId>
+								<version>${aspectj.version}</version>
+							</dependency>
+						</dependencies>
+						<executions>
+							<execution>
+								<goals>
+									<goal>compile</goal>
+									<goal>test-compile</goal>
+								</goals>
+							</execution>
+						</executions>
+						<configuration>
+							<outxml>true</outxml>
+							<aspectLibraries>
+								<aspectLibrary>
+									<groupId>org.springframework</groupId>
+									<artifactId>spring-aspects</artifactId>
+								</aspectLibrary>
+								<aspectLibrary>
+									<groupId>${kroger.aspects.groupid}</groupId>
+									<artifactId>${kroger.aspects.artifactid}</artifactId>
+								</aspectLibrary>
+							</aspectLibraries>
+							<source>${java.source}</source>
+							<target>${java.target}</target>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<!-- This profile is for the Groovy Supprt -->
+		<profile>
+			<id>groovy</id>
+			<activation>
+				<file>
+					<exists>groovy.profile</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>${maven.compiler.plugin.version}</version>
+						<configuration>
+							<compilerId>groovy-eclipse-compiler</compilerId>
+							<verbose>true</verbose>
+						</configuration>
+						<dependencies>
+							<dependency>
+								<groupId>org.codehaus.groovy</groupId>
+								<artifactId>groovy-eclipse-compiler</artifactId>
+								<version>${codehaus.groovy.compiler.version}</version>
+								<exclusions>
+									<exclusion>
+										<groupId>org.codehaus.groovy</groupId>
+										<artifactId>groovy-eclipse-batch</artifactId>
+									</exclusion>
+								</exclusions>
+							</dependency>
+							<dependency>
+								<groupId>org.codehaus.groovy</groupId>
+								<artifactId>groovy-eclipse-batch</artifactId>
+								<version>${codehaus.groovy.batch.version}</version>
+							</dependency>
+						</dependencies>
+					</plugin>
+					<!-- Optional, include this piece for integration with Eclipse -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-eclipse-plugin</artifactId>
+						<version>${maven.eclipse.plugin.version}</version>
+						<configuration>
+							<additionalProjectnatures>
+								<projectnature>org.eclipse.jdt.groovy.core.groovyNature</projectnature>
+							</additionalProjectnatures>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>build-helper-maven-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>add-source</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>add-source</goal>
+								</goals>
+								<configuration>
+									<sources>
+										<source>src/main/groovy</source>
+										<source>src/test/groovy</source>
+									</sources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<!-- This profile is for the Spring Source ToolSuite -->
+		<profile>
+			<id>sts</id>
+			<activation>
+				<file>
+					<exists>sts.profile</exists>
+				</file>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-eclipse-plugin</artifactId>
+						<version>${maven.eclipse.plugin.version}</version>
+						<configuration>
+							<downloadSources>false</downloadSources>
+							<downloadJavadocs>false</downloadJavadocs>
+							<wtpversion>2.0</wtpversion>
+							<additionalBuildcommands>
+								<buildCommand>
+									<name>org.eclipse.ajdt.core.ajbuilder</name>
+									<arguments>
+										<aspectPath>org.springframework.aspects</aspectPath>
+									</arguments>
+								</buildCommand>
+								<buildCommand>
+									<name>org.springframework.ide.eclipse.core.springbuilder</name>
+								</buildCommand>
+							</additionalBuildcommands>
+							<additionalProjectnatures>
+								<projectnature>org.eclipse.ajdt.ui.ajnature</projectnature>
+								<!-- <projectnature> com.springsource.sts.roo.core.nature </projectnature> -->
+								<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+							</additionalProjectnatures>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-idea-plugin</artifactId>
+						<version>${maven.idea.plugin.version}</version>
+						<configuration>
+							<downloadSources>true</downloadSources>
+							<dependenciesAsLibraries>true</dependenciesAsLibraries>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>tomcat-maven-plugin</artifactId>
+						<version>${tomcat.plugin.version}</version>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<!-- This profile modifies the Eclipse settings for the Eclipse plugin -->
+		<!-- To activate, run 'mvn -P webapp eclipse:eclipse' -->
+		<profile>
+			<id>webapp</id>
+			<build>
+				<plugins>
+					<!-- Make target directory WEB-INF/classes -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-eclipse-plugin</artifactId>
+						<version>${maven.eclipse.plugin.version}</version>
+						<configuration>
+							<buildOutputDirectory>
+								src/main/webapp/WEB-INF/classes
+							</buildOutputDirectory>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<!-- This profile invokes the JSLint plug-in -->
+		<!-- To activate, run 'mvn -P jslint' -->
+		<profile>
+			<id>jslint</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo.jslint</groupId>
+						<artifactId>jslint-maven-plugin</artifactId>
+						<version>${codehaus.jslint.version}</version>
+						<executions>
+							<execution>					
+								<goals>
+									<goal>main-jslint</goal>
+								</goals>
+								<configuration>
+									<sourceJsFolder>${javascript.directory}</sourceJsFolder>
+									<strictWhiteSpace>false</strictWhiteSpace>
+									<tolerateContinuation>true</tolerateContinuation>
+									<disallowUndefinedVariables>false</disallowUndefinedVariables>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<!-- This profile creates a build.properties files with a build.number 
+			property -->
+		<!-- To activate, run 'mvn -P buildnumber -Dbuild.number=123 compile -->
+		<profile>
+			<id>buildnumber</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>${maven.antrun.plugin.version}</version>
+						<executions>
+							<execution>
+								<phase>compile</phase>
+								<configuration>
+									<tasks>
+										<fail unless="build.number">
+											Missing property! Please add
+											-Dbuild.number=BUILD_NUMBER_HERE
+											to build command.
+										</fail>
+										<concat destfile="target/classes/${build.properties.file}">
+											build.number=${build.number}
+										</concat>
+									</tasks>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<!-- This profile enables the user to run javadoc reports. -->
+		<!-- To activate, run 'mvn -P javadoc site' -->
+		<profile>
+			<id>javadoc</id>
+			<activation />
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>${maven.javadoc.plugin.version}</version>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
+		<!-- This profile enables the user to run pmd reports. -->
+		<!-- To activate, run 'mvn -P pmd site' -->
+		<profile>
+			<id>pmd</id>
+			<activation />
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-pmd-plugin</artifactId>
+						<version>${maven.pmd.plugin.version}</version>
+						<configuration>
+							<targetJdk>${java.target}</targetJdk>
+							<rulesets>
+								<ruleset>/rulesets/basic.xml</ruleset>
+								<ruleset>/rulesets/unusedcode.xml</ruleset>
+								<ruleset>/rulesets/imports.xml</ruleset>
+								<ruleset>/rulesets/braces.xml</ruleset>
+								<ruleset>/rulesets/typeresolution.xml</ruleset>
+							</rulesets>
+						</configuration>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
+		<!-- This profile enables the user to run cobertura reports. -->
+		<!-- To activate, run 'mvn -P cobertura site' -->
+		<profile>
+			<id>cobertura</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>cobertura-maven-plugin</artifactId>
+						<version>${codehaus.cobertura.plugin.version}</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>clean</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<version>${maven.antrun.plugin.version}</version>
+						<executions>
+							<execution>
+								<phase>process-test-resources</phase>
+								<configuration>
+									<tasks>
+										<echo>
+											Still applying
+											cobertura-maven-plugin
+											workaround... (but
+											${codehaus.cobertura.plugin.version} now used)
+										</echo>
+										<mkdir dir="${basedir}/target/cobertura/" />
+										<touch file="${basedir}/target/cobertura/cobertura.ser" />
+										<copy file="${basedir}/target/cobertura/cobertura.ser" todir="${basedir}" failonerror="false" verbose="true" />
+									</tasks>
+								</configuration>
+								<goals>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>cobertura-maven-plugin</artifactId>
+						<version>${codehaus.cobertura.plugin.version}</version>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
+		<!-- This profile enables the FindBugs Report for Maven -->
+		<!-- To activate, run 'mvn -P findbugs site' -->
+		<profile>
+			<id>findbugs</id>
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>findbugs-maven-plugin</artifactId>
+						<version>${codehaus.findbugs.plugin.version}</version>
+						<configuration>
+							<xmlOutput>true</xmlOutput>
+							<threshold>Low</threshold>
+							<effort>Default</effort>
+							<visitors>FindDeadLocalStores,UnreadFields</visitors>
+							<omitVisitors>FindDeadLocalStores,UnreadFields</omitVisitors>
+							<debug>false</debug>
+							<relaxed>false</relaxed>
+						</configuration>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
+		<!-- This profile enables the TagList Report for Maven -->
+		<!-- To activate, run 'mvn -P taglist site' -->
+		<profile>
+			<id>taglist</id>
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>taglist-maven-plugin</artifactId>
+						<version>${codehaus.taglist.plugin.version}</version>
+						<configuration>
+							<tags>
+								<tag>TODO</tag>
+								<tag>FIXME</tag>
+								<tag>@todo</tag>
+								<tag>@deprecated</tag>
+							</tags>
+						</configuration>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
+		<!-- This profile enables the Java NCSS for Maven -->
+		<!-- To activate, run 'mvn -P javancss site' -->
+		<profile>
+			<id>javancss</id>
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>javancss-maven-plugin</artifactId>
+						<version>${codehaus.javancss.plugin.version}</version>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
+		<!-- This profile enables the SVN Changelog Report for Maven -->
+		<!-- To activate, run 'mvn -P changelog site' -->
+		<profile>
+			<id>changelog</id>
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-changelog-plugin</artifactId>
+						<version>${maven.changelog.plugin.version}</version>
+						<configuration>
+							<type>range</type>
+							<range>${changelog.date.range.number}</range>
+						</configuration>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
+		<!-- This profile enables the SVN Stats Report for Maven -->
+		<!-- To activate, run 'mvn -P statscm site' -->
+		<profile>
+			<id>statscm</id>
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>net.sf</groupId>
+						<artifactId>stat-scm</artifactId>
+						<version>${maven.statscm.plugin.version}</version>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
+		<!-- This profile enables the Dashboard Report for Maven -->
+		<!-- To activate, run 'mvn -P dashboard site' -->
+		<profile>
+			<id>dashboard</id>
+			<reporting>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>dashboard-maven-plugin</artifactId>
+						<version>${codehaus.dashboard.plugin.version}</version>
+					</plugin>
+				</plugins>
+			</reporting>
+		</profile>
+	</profiles>
+	<!-- ================================================ -->
+	<build>
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav</artifactId>
+				<version>${maven.wagon.webdav.plugin.version}</version>
+			</extension>
+		</extensions>
+		<plugins>
+			<!-- Enable Java 5/6 input/output. Requires JEE5 or JEE6 profile defined 
+				above to be set -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven.compiler.plugin.version}</version>
+				<configuration>
+					<source>${java.source}</source>
+					<target>${java.target}</target>
+				</configuration>
+			</plugin>
+			<!-- Remove extra files from classes/lib directory that an IDE may have 
+				added -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>${maven.antrun.plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>clean</phase>
+						<configuration>
+							<tasks>
+								<delete failonerror="false">
+									<fileset dir="src/main/webapp/WEB-INF/classes" includes="**/*.class" />
+									<fileset dir="src/main/webapp/WEB-INF/classes" includes="**/*.xml" />
+									<fileset dir="src/main/webapp/WEB-INF/classes" includes="**/*.properties" />
+									<fileset dir="src/main/webapp/WEB-INF/classes" includes="**/*.ddl" />
+									<fileset dir="src/main/webapp/WEB-INF/classes" includes="**/*.sql" />
+									<fileset dir="src/main/webapp/WEB-INF/classes/com" />
+									<fileset dir="src/main/webapp/WEB-INF/classes/net" />
+									<fileset dir="src/main/webapp/WEB-INF/classes/org" />
+									<fileset dir="src/main/webapp/WEB-INF/classes/META-INF" />
+									<fileset dir="src/main/webapp/WEB-INF/lib" includes="**/*.jar" />
+								</delete>
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- Surefire setting for version 2.4 (http://www.nabble.com/Mock-container-test-failures-after-upgrading-to-Maven-Surefire-2.4(.1)-td15421263.html) -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.plugin.version}</version>
+				<configuration>
+					<useSystemClassLoader>false</useSystemClassLoader>
+					<argLine>-Xms512m -Xmx768m -XX:MaxPermSize=512m</argLine>
+					<systemPropertyVariables>
+						<property>
+							<name>java.awt.headless</name>
+							<value>true</value>
+						</property>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+			<!-- Make sure we use an updated release plug-in -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>${maven.release.plugin.version}</version>
+			</plugin>
+		</plugins>
+	</build>
+	<!-- ================================================ -->
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>${maven.surefire.plugin.version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>
+					maven-project-info-reports-plugin
+				</artifactId>
+				<version>${maven.project.info.plugin.version}</version>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>index</report>
+							<report>summary</report>
+							<report>project-team</report>
+							<report>mailing-list</report>
+							<report>dependencies</report>
+							<report>issue-tracking</report>
+							<report>cim</report>
+							<report>license</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+		</plugins>
+	</reporting>
+	<!-- ================================================ -->
+	<distributionManagement>
+		<repository>
+			<id>eaf-repository</id>
+			<url>dav:http://artifactory.kroger.com/artifactory/kroger-eaf</url>
+		</repository>
+		<site>
+			<id>eaf-site</id>
+			<url>file:///tmp/eafsite</url>
+		</site>
+	</distributionManagement>
+</project>

@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.kroger.commons</groupId>
+	<artifactId>kroger-boot-starter-angular</artifactId>
+	<packaging>jar</packaging>
+	<version>4.0.1</version>
+	<name>Kroger Commons Boot Angular</name>
+	<description>Kroger Commons Boot Angular</description>
+	<!-- ================================================ -->
+	<parent>
+		<groupId>com.kroger.commons</groupId>
+		<artifactId>kroger-pom</artifactId>
+		<version>4.0.0</version>
+	</parent>
+	<!-- ================================================ -->
+	<dependencies>
+		<!-- Kroger Autoconfigure Dependency -->
+		<dependency>
+			<groupId>com.kroger.commons</groupId>
+			<artifactId>kroger-boot-autoconfigure</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.kroger.commons</groupId>
+			<artifactId>kroger-core</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kroger.commons</groupId>
+			<artifactId>kroger-error</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

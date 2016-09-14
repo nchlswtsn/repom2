@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-cli-parent</artifactId>
+	<version>1.0.3.RELEASE</version>
+	<parent>
+		<groupId>org.springframework.cloud</groupId>
+		<artifactId>spring-cloud-build</artifactId>
+		<version>1.0.2.RELEASE</version>
+		<relativePath/>
+	</parent>
+	<packaging>pom</packaging>
+	<name>Spring Cloud Cli Parent</name>
+	<description>Spring Cloud Cli</description>
+	<url>http://projects.spring.io/spring-cloud/</url>
+	<scm>
+		<url>https://github.com/spring-cloud/spring-cloud-cli</url>
+		<connection>scm:git:git://github.com/spring-cloud/spring-cloud-cli.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/spring-cloud/spring-cloud-cli.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+	<properties>
+        <bintray.package>cli</bintray.package>
+        <docs.main>spring-cloud-cli</docs.main>
+		<main.basedir>${basedir}/..</main.basedir>
+	</properties>
+	<modules>
+		<module>spring-cloud-versions</module>
+		<module>spring-cloud-cli</module>
+		<module>docs</module>
+	</modules>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-config</artifactId>
+				<version>1.0.2.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-netflix</artifactId>
+				<version>1.0.3.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

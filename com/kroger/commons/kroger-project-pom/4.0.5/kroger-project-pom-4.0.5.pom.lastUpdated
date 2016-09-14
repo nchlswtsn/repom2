@@ -1,0 +1,14 @@
+#NOTE: This is an Aether internal implementation file, its format can be changed without prior notice.
+#Thu Sep 01 14:00:23 EDT 2016
+@default-artremote-http\://artifactory.kroger.com/artifactory/remote-repos/.lastUpdated=1472752795045
+default-http\://artifactory.kroger.com/artifactory/libs-snapshot/.lastUpdated=1472752691991
+http\://artifactory.kroger.com/artifactory/libs-snapshot/.error=Could not transfer artifact com.kroger.commons\:kroger-project-pom\:pom\:4.0.5 from/to artsnapshots (http\://artifactory.kroger.com/artifactory/libs-snapshot)\: artifactory.kroger.com
+http\://repo.maven.apache.org/maven2/.lastUpdated=1472752364364
+http\://repo.maven.apache.org/maven2/.error=
+@default-artsnapshots-http\://artifactory.kroger.com/artifactory/libs-snapshot/.lastUpdated=1472752795041
+http\://artifactory.kroger.com/artifactory/libs-release/.lastUpdated=1472752823752
+default-http\://artifactory.kroger.com/artifactory/remote-repos/.lastUpdated=1472752692578
+http\://artifactory.kroger.com/artifactory/remote-repos/.error=Could not transfer artifact com.kroger.commons\:kroger-project-pom\:pom\:4.0.5 from/to artremote (http\://artifactory.kroger.com/artifactory/remote-repos)\: artifactory.kroger.com
+https\://repo.maven.apache.org/maven2/.lastUpdated=1472752569402
+https\://repo.maven.apache.org/maven2/.error=
+default-http\://artifactory.kroger.com/artifactory/libs-release/.lastUpdated=1472752691197

@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.kroger.commons</groupId>
+	<artifactId>kroger-boot-starter-aop</artifactId>
+	<packaging>jar</packaging>
+	<version>4.0.0</version>
+	<name>Kroger Commons Boot AOP</name>
+	<description>Kroger Commons Boot AOP</description>
+	<!-- ================================================ -->
+	<parent>
+		<groupId>com.kroger.commons</groupId>
+		<artifactId>kroger-pom</artifactId>
+		<version>4.0.0</version>
+	</parent>
+	<!-- ================================================ -->
+	<scm>
+		<connection>scm:git:http://stash.kroger.com/scm/eaf/kroger-boot-starter-aop.git</connection>
+	</scm>
+	<!-- ================================================ -->
+	<dependencies>
+		<!-- Kroger Autoconfigure Dependency -->
+		<dependency>
+			<groupId>com.kroger.commons</groupId>
+			<artifactId>kroger-boot-autoconfigure</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kroger.commons</groupId>
+			<artifactId>kroger-aop</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+	</dependencies>
+</project>

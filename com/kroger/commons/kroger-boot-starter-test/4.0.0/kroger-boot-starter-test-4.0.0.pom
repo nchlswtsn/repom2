@@ -1,0 +1,93 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.kroger.commons</groupId>
+	<artifactId>kroger-boot-starter-test</artifactId>
+	<packaging>jar</packaging>
+	<version>4.0.0</version>
+	<name>Kroger Commons Boot Test</name>
+	<description>Kroger Commons Boot Test</description>
+	<!-- ================================================ -->
+	<parent>
+		<groupId>com.kroger.commons</groupId>
+		<artifactId>kroger-pom</artifactId>
+		<version>4.0.0</version>
+	</parent>
+	<!-- ================================================ -->
+	<scm>
+		<connection>scm:git:http://stash.kroger.com/scm/eaf/kroger-boot-starter-test.git</connection>
+	</scm>
+	<!-- ================================================ -->
+	<dependencies>
+		<!-- Spring Test Dependency-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+		</dependency>
+		<!-- JUnit Dependency -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+        <!-- Hamcrest -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-library</artifactId>
+        </dependency>
+		<!-- Mocking Framework -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+		</dependency>
+		<!-- Database dependencies -->
+		<dependency>
+			<groupId>org.dbunit</groupId>
+			<artifactId>dbunit</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>commons-logging</artifactId>
+					<groupId>commons-logging</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.github.springtestdbunit</groupId>
+			<artifactId>spring-test-dbunit</artifactId>
+		</dependency>
+		<!-- App Server implementation support -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+		<!-- Web Dependencies -->
+		<dependency>
+			<groupId>com.kroger.commons</groupId>
+			<artifactId>kroger-httpmock</artifactId>
+		</dependency>
+		<!-- Testing with Groovy (See http://java.dzone.com/articles/spock-10-groovy-24)-->
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.spockframework</groupId>
+			<artifactId>spock-core</artifactId>
+		</dependency>
+		<!-- Ant Dependencies, causes download for Ant Scripts -->
+		<dependency>
+			<groupId>ant-contrib</groupId>
+			<artifactId>ant-contrib</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>com.jayway.jsonpath</groupId>
+		    <artifactId>json-path</artifactId>
+		</dependency>
+	</dependencies>
+</project>

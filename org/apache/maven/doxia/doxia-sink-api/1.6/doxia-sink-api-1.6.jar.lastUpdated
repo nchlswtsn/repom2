@@ -1,0 +1,5 @@
+#NOTE: This is an internal implementation file, its format can be changed without prior notice.
+#Thu Sep 01 14:11:20 EDT 2016
+http\://artifactory.kroger.com/artifactory/plugins-snapshot/.lastUpdated=1472753480297
+http\://artifactory.kroger.com/artifactory/plugins-release/.error=Could not transfer artifact org.apache.maven.doxia\:doxia-sink-api\:jar\:1.6 from/to artcentral (http\://artifactory.kroger.com/artifactory/plugins-release)\: Failed to transfer file\: http\://artifactory.kroger.com/artifactory/plugins-release/org/apache/maven/doxia/doxia-sink-api/1.6/doxia-sink-api-1.6.jar. Return code is\: 500 , ReasonPhrase\:Internal Server Error.
+default-http\://artifactory.kroger.com/artifactory/plugins-release/.lastUpdated=1472753478203

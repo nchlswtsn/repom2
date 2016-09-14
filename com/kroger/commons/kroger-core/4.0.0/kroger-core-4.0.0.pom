@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.kroger.commons</groupId>
+	<artifactId>kroger-core</artifactId>
+	<packaging>jar</packaging>
+	<version>4.0.0</version>
+	<name>Kroger Commons Core</name>
+	<description>Kroger Commons Core Project</description>
+	<parent>
+		<groupId>com.kroger.commons</groupId>
+		<artifactId>kroger-pom</artifactId>
+		<version>4.0.0</version>
+		<relativePath>../kroger-pom/pom.xml</relativePath>
+	</parent>
+	<!-- ================================================ -->
+	<scm>
+		<connection>scm:git:http://stash.kroger.com/scm/eaf/kroger-core.git</connection>
+	</scm>
+	<!-- ================================================ -->
+	<dependencies>
+		<!-- JEE Dependencies -->
+		<dependency>
+			<groupId>com.kroger.commons</groupId>
+			<artifactId>kroger-javaee6-web</artifactId>
+			<version>4.0.0</version>
+			<scope>provided</scope>
+		</dependency>	
+	</dependencies>
+</project>
